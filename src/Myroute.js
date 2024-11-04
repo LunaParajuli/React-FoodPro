@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Layout from './component/Layout'
 import Homepage from './page/Homepage'
+import Login from './component/userSide/Login'
 
 const Myroute = () => {
   return (
@@ -11,6 +12,7 @@ const Myroute = () => {
           <Route path='/' element={<Layout />}>
 
             <Route index element={<Homepage />} />
+            <Route path='login' element={<Login />} />
 
           </Route>
         </Routes>
