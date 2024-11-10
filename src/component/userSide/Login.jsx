@@ -1,6 +1,7 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import Login from './userSide/SignUp';
+import SignUp from './SignUp';
+
 
 
 
@@ -8,9 +9,17 @@ const Login = ({ onClose }) => {
 
   const closeRef = useRef(null);
 
+  const signRef = useRef(null);
+  const [showSignUp, setShowSignUp] = useState(false); // State to control Login component visibility
+
+
+
+
+
   useEffect(() => {
 
     const closeButton = closeRef.current;
+    const signButton = signRef.current;
 
     if (closeButton) {
       closeButton.addEventListener('click', () => {
@@ -23,15 +32,27 @@ const Login = ({ onClose }) => {
       if (closeButton) {
         closeButton.removeEventListener('click', onClose);
       }
+
+
+      if (signButton) {
+        signButton.addEventListener('click', () => {
+          setShowSignUp(true);
+        })
+      }
+
+
+
     }
-  }, [onClose])
-  
+
+
+  }, [onClose],)
+
 
   return (
     <>
 
 
-      <div className="md:flex rounded overflow-hidden shadow-md shadow-[#0e6655] my-3">
+      <div className="md:flex rounded overflow-hidden shadow-md shadow-yellow-300 my-3">
         <div className=" ">
           <img src="https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" className="rounded  " />
         </div>
@@ -45,8 +66,9 @@ const Login = ({ onClose }) => {
                 Login to Tastemandu
               </h1>
 
-              <button ref={closeRef} id="closeButton" className="text-3xl hover:text-red-700" >
+              <button ref={closeRef} id="closeButton" className="text-3xl hover:text-red-700" ><Link to="/">
                 &times;
+              </Link>
               </button>
 
             </div>
@@ -85,17 +107,29 @@ const Login = ({ onClose }) => {
               </div>
 
 
-              <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+              <p
+                ref={signRef}
+                id="signButton"
+                signup_props={() => setShowSignUp(true)}
+                className="text-sm font-light text-gray-500 dark:text-gray-400">
                 Don’t have an account yet? <Link to="#" className="font-medium text-green-600 hover:underline dark:text-primary-500">Sign up</Link>
               </p>
             </form>
-
-
 
           </div>
         </div>
 
       </div>
+
+
+
+      //Conditionally render the Login modal overlay
+      {showSignUp && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-20">
+          <SignUp signup_props={() => setShowSignUp(false)} />
+        </div>
+
+      )}
 
 
     </>

@@ -1,72 +1,141 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import { Formik, Form, Field, ErrorMessage } from 'formik'
+import * as Yup from 'yup';
 
 
-const SignUp = () => {
+
+const SignUp = ({ signup_props }) => {
+
+  const signCloseRef = useRef(null)
+
+  useEffect(() => {
+
+
+    const signCloseButton = signCloseRef.current
+
+    if (signCloseButton) {
+      signCloseButton.addEventListener('click', () => {
+        if (signup_props) signup_props();
+      })
+
+    }
+
+
+    // Cleanup the event listener on unmount
+    return () => {
+      if (signCloseButton) {
+        signCloseButton.removeEventListener('click', signup_props);
+      }
+    }
+
+  }, [signup_props])
+
   return (
     <>
 
       <div className="rounded w-full md:w-[50%] mx-auto my-10 bg-white p-3">
         <div className="flex justify-between mx-5">
           <h1 className="text-black text-3xl">Signup For Tastemandu</h1>
-          <button className="text-3xl hover:text-red-600">
-            &times;
+          <button
+            ref={signCloseRef}
+            id="sign_close"
+            className="text-3xl hover:text-red-600">
+            <Link to="/">
+              &times;
+            </Link>
           </button>
         </div>
         <div className="w-full h-[1px] bg-gray-300 mt-4 "></div>
 
         <div className="w-[97%]">
 
-          <div className="w-[100%] mt-8 ">
-            <form action="" className="w-full">
 
-              <div className="flex justify-between w-full">
+          <Formik>
 
-                <div className="grid grid-rows-1 gap-1 w-full">
-                  <label htmlFor="fname">FIRST NAME:</label>
-                  <input type="text" placeholder="Enter your name" name="fname" id="fname" className="border-2 border-gray-400 p-2 w-[90%]" />
+            initialValues={{ fname: "", lname: "", email: "", number: "", pwd: "", cpwd: "" }}
+            validationSchema={Yup.object({
+
+
+            }
+
+            )}
+
+
+
+
+
+
+            <div className="w-[100%] mt-8 ">
+
+              <form action="" className="w-full">
+
+                <div className="flex justify-between w-full">
+
+                  <div className="grid grid-rows-1 gap-1 w-full">
+                    <label htmlFor="fname">FIRST NAME:</label>
+                    <Field type="text" placeholder="Enter your name" name="fname" id="fname" className="border-2 border-gray-400 p-2 w-[90%]" />
+                    <ErrorMessage name='fname'>
+                      {mgs => (<div style={{ color: 'red' }}>{mgs}</div>)}
+                    </ErrorMessage>
+                  </div>
+
+                  <div className="grid grid-rows-1 gap-1 w-full">
+                    <label htmlFor="lname">LAST NAME:</label>
+                    <Field type="text" placeholder="Enter your last name" name="lname" id="lname" className="border-2 border-gray-400 p-2 w-[90%]" />
+                    <ErrorMessage name='lname'>
+                      {mgs => (<div style={{ color: 'red' }}>{mgs}</div>)}
+                    </ErrorMessage>
+                  </div>
+
                 </div>
 
-                <div className="grid grid-rows-1 gap-1 w-full">
-                  <label htmlFor="fname">LAST NAME:</label>
-                  <input type="text" placeholder="Enter your last name" name="lname" id="lname" className="border-2 border-gray-400 p-2 w-[90%]" />
+
+                <div className="flex justify-between w-full mt-6">
+
+                  <div className="grid grid-rows-1 gap-1 w-full">
+                    <label htmlFor="email">EMAIL ADDRESS:</label>
+                    <Field type="email" placeholder="name@email.com" name="email" id="email" className="border-2 border-gray-400 p-2 w-[90%]" />
+                    <ErrorMessage name='email'>
+                      {mgs => (<div style={{ color: 'red' }}>{mgs}</div>)}
+                    </ErrorMessage>
+                  </div>
+
+                  <div className="grid grid-rows-1 gap-1 w-full">
+                    <label htmlFor="number">MOBILE NUMBER:</label>
+                    <Field type="number" placeholder="98XXXXXXXX" name="number" id="number" className="border-2 border-gray-400 p-2 w-[90%]" />
+                    <ErrorMessage name='number'>
+                      {mgs => (<div style={{ color: 'red' }}>{mgs}</div>)}
+                    </ErrorMessage>
+                  </div>
+
                 </div>
 
-              </div>
 
+                <div className="flex justify-between w-full mt-6">
 
-              <div className="flex justify-between w-full mt-6">
+                  <div className="grid grid-rows-1 gap-1 w-full">
+                    <label htmlFor="pwd">PASSWORD:</label>
+                    <Field type="password" placeholder="Enter your password" name="email" id="email" className="border-2 border-gray-400 p-2 w-[90%]" />
+                    <ErrorMessage name='pwd'>
+                      {mgs => (<div style={{ color: 'red' }}>{mgs}</div>)}
+                    </ErrorMessage>
+                  </div>
 
-                <div className="grid grid-rows-1 gap-1 w-full">
-                  <label htmlFor="email">EMAIL ADDRESS:</label>
-                  <input type="email" placeholder="name@email.com" name="email" id="email" className="border-2 border-gray-400 p-2 w-[90%]" />
+                  <div className="grid grid-rows-1 gap-1 w-full">
+                    <label htmlFor="cpwd">CONFORM PASSWORD:</label>
+                    <Field type="password" placeholder="Conform your password" name="cpwd" id="cpwd" className="border-2 border-gray-400 p-2 w-[90%]" />
+                    <ErrorMessage name='cpwd'>
+                      {mgs => (<div style={{ color: 'red' }}>{mgs}</div>)}
+                    </ErrorMessage>
+                  </div>
+
                 </div>
 
-                <div className="grid grid-rows-1 gap-1 w-full">
-                  <label htmlFor="number">MOBILE NUMBER:</label>
-                  <input type="number" placeholder="98XXXXXXXX" name="number" id="number" className="border-2 border-gray-400 p-2 w-[90%]" />
-                </div>
+              </form>
 
-              </div>
-
-
-              <div className="flex justify-between w-full mt-6">
-
-                <div className="grid grid-rows-1 gap-1 w-full">
-                  <label htmlFor="pwd">PASSWORD:</label>
-                  <input type="password" placeholder="Enter your password" name="email" id="email" className="border-2 border-gray-400 p-2 w-[90%]" />
-                </div>
-
-                <div className="grid grid-rows-1 gap-1 w-full">
-                  <label htmlFor="cpwd">CONFORM PASSWORD:</label>
-                  <input type="password" placeholder="Conform your password" name="cpwd" id="cpwd" className="border-2 border-gray-400 p-2 w-[90%]" />
-                </div>
-
-              </div>
-
-            </form>
-          </div>
-
+            </div>
+          </Formik>
 
           <div className="g-recaptcha mt-6 mb-6" >
             <div className="w-[304px] h-[78px] flex justify-center items-center">
@@ -105,7 +174,7 @@ const SignUp = () => {
 
             <div className="w-1/2 mb-3">
               <div className="bg-blue-600 text-white text-center rounded-md py-2">
-                <a href="" className="text-white">Facebook</a>
+                <Link to="" className="text-white">Facebook</Link>
               </div>
               <button className="hidden" id="btnFacebook" name="provider" value="Facebook"></button>
             </div>
@@ -113,14 +182,14 @@ const SignUp = () => {
 
             <div className="w-1/2 mb-3">
               <div className="bg-red-600 text-white text-center rounded-md py-2">
-                <a href="" className="text-white">Google Plus</a>
+                <Link to="" className="text-white">Google Plus</Link>
               </div>
               <button className="hidden" id="btnGoogle" name="provider" value="Google"></button>
             </div>
 
 
             <div className="text-center mt-4">
-              <p className="text-sm text-gray-700">Already have an account? <a href="" className="text-blue-600 underline">Sign in</a></p>
+              <p className="text text-gray-700">Already have an account? <Link to="/login" className="text-blue-600 hover:underline hover:text-green-500">Sign in</Link></p>
             </div>
           </div>
 

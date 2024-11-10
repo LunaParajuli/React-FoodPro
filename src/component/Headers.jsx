@@ -9,24 +9,34 @@ const Headers = () => {
   const loginRef = useRef(null);
   const [showLogin, setShowLogin] = useState(false); // State to control Login component visibility
 
+
   useEffect(() => {
 
     const loginButton = loginRef.current;
+
 
     if (loginButton) {
       loginButton.addEventListener('click', () => {
         // loginButton.style.border = "2px solid yellow"
         setShowLogin(true); // Show the Login component
-
       })
     }
+
+
+
 
     // Cleanup event listener
     return () => {
       if (loginButton) {
         loginButton.removeEventListener('click', () => setShowLogin(true));
       }
+
     };
+
+
+
+
+
 
 
 
@@ -35,7 +45,6 @@ const Headers = () => {
 
   return (
     <>
-
 
 
       <div className="flex justify-around bg-[#f0f3f4]  h-14 items-center shadow shadow-gray-400  fixed top-0 left-0 right-0 overflow-x-hidden z-10  ">
@@ -51,8 +60,6 @@ const Headers = () => {
         </button>
 
       </div>
-
-
 
 
       //Conditionally render the Login modal overlay
