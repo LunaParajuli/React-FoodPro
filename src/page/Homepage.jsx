@@ -1,9 +1,25 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Helmet } from "react-helmet";
 
 
 
+
 const Homepage = () => {
+
+  const browseRef = useRef(null)
+
+  useEffect(() => {
+    const browse_res = browseRef.current
+
+
+    if (browse_res) {
+      browse_res.addEventListener('click', () => {
+        // loginButton.style.border = "2px solid yellow"
+
+      })
+    }
+
+  })
 
   return (
     <>
@@ -14,17 +30,37 @@ const Homepage = () => {
       </Helmet>
 
       <div className="container max-w-screen h-[95vh]  bg-[url('https://img.freepik.com/free-photo/gray-wall-textures-background_74190-4389.jpg')] bg-no-repeat bg-cover w-full overflow-x-hidden relative">
-        <div className="absolute inset-0 flex items-center justify-center  flex-col ">
-          <h2 className="text-gray-700 text-3xl  p-4  tracking-wider text-center">Order food from the widest range of restaurants.</h2>
 
-          <div className=" md:flex  md:justify-center w-[90%] md:w-[60%] mx-auto mt-10 p-2 ">
-            <input type="text" placeholder="Restaurant or Cuisine(live it blank to browse all)" className="bg-white w-[100%] md:w-[80%] h-12 pl-2"
+        <div className="absolute inset-0 flex items-center justify-center  flex-col mt-20 ">
+          <h2 className="text-gray-500 text-3xl  p-4  tracking-widest text-center">Order food from the widest range of restaurants.</h2>
+
+          <div
+            id="browse_res"
+            className=" md:flex  md:justify-center w-[90%] md:w-[60%] mx-auto  p-2 ">
+
+            <input type="text" placeholder="Restaurant or Cuisine(live it blank to browse all)" className="bg-white w-[100%] md:w-[80%] h-12 pl-2 "
             />
-            <button className="bg-yellow-400  h-12 w-[65%]  md:w-[20%] ml-12 md:ml-0 mt-5 md:mt-0">Find Restaurants</button>
+            <button className="bg-yellow-400  h-12 w-[65%]  md:w-[20%] ml-12 md:ml-0 mt-3 md:mt-0">Find Restaurants</button>
           </div>
 
         </div>
 
+        <div id="image_food" className="flex flex-wrap justify-between w-full h-full">
+
+          <div className="  ">
+
+            <img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=600" alt="f1" className="h-44 w-44 rounded-full mt-32 ml-20 shadow-lg shadow-gray-500 hover:scale-125 transition-all" />
+
+            <img src="https://images.pexels.com/photos/7425137/pexels-photo-7425137.jpeg?auto=compress&cs=tinysrgb&w=600" alt="f2" className="h-56 w-56 rounded-full ml-72 mt-28 shadow-lg shadow-gray-500" />
+          </div>
+
+          <div className=" ">
+            <img src="https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?auto=compress&cs=tinysrgb&w=600" alt="f3" className="h-60 w-60 rounded-full  mt-10 ml-36 shadow-lg shadow-gray-500 " />
+
+            <img src="https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?auto=compress&cs=tinysrgb&w=600" alt="f4" className="h-72 w-72 rounded-full mt-20 mr-56 shadow-lg shadow-gray-500 " />
+          </div>
+
+        </div>
       </div>
 
 
