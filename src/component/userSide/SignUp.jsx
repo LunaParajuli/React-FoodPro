@@ -51,10 +51,41 @@ const SignUp = ({ signup_props }) => {
         <div className="w-[97%]">
 
 
-          <Formik>
+          <Formik
+
 
             initialValues={{ fname: "", lname: "", email: "", number: "", pwd: "", cpwd: "" }}
             validationSchema={Yup.object({
+
+              fname: Yup.string()
+                .matches(/^([a-zA-Z])+$/, "Only contain alphabets")
+                .max(20, "Not more than twenty characters")
+                .required("First name is mandatory"),
+
+              lname: Yup.string()
+                .matches(/^([a-zA-Z])+$/, "Only contain alphabets")
+                .max(20, "Not more than twenty characters")
+                .required("Last name is mandatory"),
+
+
+              email: Yup.string()
+                .email("Invalid email")
+                .required("Email is mandatory"),
+
+              number: Yup.string()
+                .required("Phone Number is mandatory"),
+
+
+
+              pwd: Yup.string()
+                .matches(/^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%*!]).{8,30}$/, "Weak Password,must contain uppercase,lowercase,number and specialcharacter")
+                .required("Password is mandatory"),
+
+
+
+              cpwd: Yup.string()
+                .required("Conform your password")
+                .oneOf([Yup.ref('password'), null], "Must match with password")
 
 
             }
@@ -64,6 +95,7 @@ const SignUp = ({ signup_props }) => {
 
 
 
+          >
 
 
             <div className="w-[100%] mt-8 ">
