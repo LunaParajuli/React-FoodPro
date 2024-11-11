@@ -52,7 +52,7 @@ const Login = ({ onClose }) => {
     <>
 
 
-      <div className="md:flex rounded overflow-hidden shadow-md shadow-yellow-300 my-3">
+      <div className="md:flex rounded overflow-hidden shadow-md shadow-yellow-300 my-3 z-20">
         <div className=" ">
           <img src="https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" className="rounded  " />
         </div>
