@@ -53,10 +53,10 @@ const Homepage = () => {
 
       <div
 
-        className="container max-w-screen h-[95vh]  bg-[url('https://img.freepik.com/free-photo/gray-wall-textures-background_74190-4389.jpg')] bg-no-repeat bg-cover w-full overflow-x-hidden relative mb-10">
+        className=" lg:max-w-screen h-[95vh]  bg-[url('https://img.freepik.com/free-photo/concrete-tile-background_1339-1880.jpg?ga=GA1.1.663953009.1729601995&semt=ais_hybrid')] bg-no-repeat bg-cover w-full lg:overflow-x-hidden relative mb-10 ">
 
         <div className="absolute inset-0 flex items-center justify-center  flex-col mt-20 z-10">
-          <h2 className="text-gray-500 text-3xl  p-4  tracking-widest text-center">Order food from the widest range of restaurants.</h2>
+          <h2 className="text-gray-800 text-3xl  p-4  tracking-widest text-center">Order food from the widest range of restaurants.</h2>
 
           <div
             ref={browseRef}
@@ -79,13 +79,13 @@ const Homepage = () => {
 
             <img
               ref={(el) => foodImages.current[1] = el}
-              src="https://images.pexels.com/photos/7425137/pexels-photo-7425137.jpeg?auto=compress&cs=tinysrgb&w=600" alt="f2" className="food_image_img h-56 w-56 rounded-full ml-72 mt-28 shadow-lg shadow-gray-500" />
+              src="https://images.pexels.com/photos/8952662/pexels-photo-8952662.jpeg?auto=compress&cs=tinysrgb&w=600" alt="f2" className="food_image_img h-56 w-56 rounded-full ml-72 mt-28 shadow-lg shadow-gray-500 " />
           </div>
 
           <div className=" ">
             <img
               ref={(el) => foodImages.current[2] = el}
-              src="https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?auto=compress&cs=tinysrgb&w=600" alt="f3" className="food_image_img h-60 w-60 rounded-full  mt-10 ml-36 shadow-lg shadow-gray-500 " />
+              src="https://images.pexels.com/photos/262959/pexels-photo-262959.jpeg?auto=compress&cs=tinysrgb&w=600" alt="f3" className="food_image_img h-60 w-60 rounded-full  mt-10 ml-36 shadow-lg shadow-gray-500 " />
 
             <img
               ref={(el) => foodImages.current[3] = el}
