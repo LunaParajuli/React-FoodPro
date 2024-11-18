@@ -1,4 +1,6 @@
 import React from 'react'
+import FoodCard from '../component/userSide/FoodCard';
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const RemainingHome = () => {
   return (
@@ -12,6 +14,23 @@ const RemainingHome = () => {
 
       </div>
       <div className="w-full h-[1px] bg-gray-200"></div>
+
+
+
+      {/* FoodCard Content */}
+      <div className="w-[70%] mt-10 mx-auto">
+
+        <div className="flex justify-between">
+          <h3 className="font-semibold">Featured Restaurants</h3>
+          <div className="flex items-center">
+            <p className="text-gray-600 mr-2 text-sm hover:text-green-500">View All </p>
+            <div className="flex text-gray-600 text-sm"><FaArrowRightLong /></div>
+          </div>
+
+        </div>
+        <FoodCard />
+      </div>
+
 
 
 

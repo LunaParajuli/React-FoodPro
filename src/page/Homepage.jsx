@@ -6,6 +6,7 @@ import RemainingHome from './RemainingHome';
 
 
 
+
 const Homepage = () => {
 
   const browseRef = useRef(null)
@@ -97,7 +98,7 @@ const Homepage = () => {
 
       <RemainingHome />
 
-
+      
     </>
   )
 }

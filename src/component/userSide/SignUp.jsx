@@ -34,7 +34,7 @@ const SignUp = ({ signup_props }) => {
   return (
     <>
 
-      <div className="rounded w-full md:w-[50%] mx-auto my-10 bg-white p-3">
+      <div className="rounded w-full md:w-[50%] mx-auto my-10 bg-white p-3 z-30">
         <div className="flex justify-between mx-5">
           <h1 className="text-black text-3xl">Signup For Tastemandu</h1>
           <button
