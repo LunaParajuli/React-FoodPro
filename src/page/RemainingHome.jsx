@@ -22,9 +22,9 @@ const RemainingHome = () => {
 
         <div className="flex justify-between">
           <h3 className="font-semibold">Featured Restaurants</h3>
-          <div className="flex items-center">
+          <div className="flex items-center ">
             <p className="text-gray-600 mr-2 text-sm hover:text-green-500">View All </p>
-            <div className="flex text-gray-600 text-sm"><FaArrowRightLong /></div>
+            <div className="flex text-gray-600 text-sm hover:text-green-500"><FaArrowRightLong /></div>
           </div>
 
         </div>
