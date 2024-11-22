@@ -110,9 +110,9 @@ const FoodCard = () => {
                 className="w-full h-full object-cover hover:scale-110 transform transition-transform duration-300"
               />
             </div>
-            <div className="mt-3 text-center">
-              <h3 className="text-lg font-bold">{food.res_name}</h3>
-              <p className="text-gray-600">{food.place}</p>
+            <div className="mt-3 text-center hover:text-green-500">
+              <h3 className="text-lg font-bold hover:text-green-500">{food.res_name}</h3>
+              <p className="text-gray-600 hover:text-green-500">{food.place}</p>
             </div>
           </div>
         ))}
