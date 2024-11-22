@@ -45,7 +45,7 @@ const NextHeader = () => {
           <h2 className="text-2xl ml-3 font-bold">Tastemandu</h2>
         </div>
 
-        <div className="flex">
+        <div className="hidden lg:flex">
           <input className="p-1 w-96 text-gray-400 border-2 hover:border-gray-200" type="text" placeholder="Restaurant name or cuisine" />
           <button className="py-1 px-4 bg-yellow-300 ml-1 text-gray-800">Find Restaurants</button>
         </div>

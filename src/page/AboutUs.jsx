@@ -10,7 +10,7 @@ const AboutUs = () => {
 
 
       <div className="bg-[#f0f3f4] h-40 ">
-        <p className="pt-16 pl-36  text-5xl text-gray-600">About us</p>
+        <p className="pt-16 pl-36 text-5xl text-gray-600">About us</p>
       </div>
 
       <div className="border-y-2 border-gray-200  ">

@@ -5,6 +5,7 @@ import Homepage from './page/Homepage'
 import SignUp from './component/userSide/SignUp'
 import Login from './component/userSide/Login'
 import AboutUs from './page/AboutUs'
+import HowToOrder from './page/HowToOrder'
 
 const Myroute = () => {
   return (
@@ -19,6 +20,7 @@ const Myroute = () => {
 
           </Route>
           <Route path='aboutus' element={<AboutUs />} />
+          <Route path='howtoorder' element={<HowToOrder />} />
         </Routes>
       </Router>
     </>
