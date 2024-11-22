@@ -49,7 +49,8 @@ const RemainingHome = () => {
 
           <p className="text-white text-center md:font-semibold ">We know that your time is valuable and sometimes every minute in the day counts. That’s why we deliver! So you can spend more time doing the things you love.</p>
           <div className="mx-auto w-[20%] mt-4 md:mt-10">
-            <button className="uppercase px-10 md:px-4 md:py-2 bg-white rounded hover:text-green-600">learn more</button>
+
+            <button className="uppercase px-10 md:px-4 md:py-2 bg-white rounded hover:text-green-600"><a href="/aboutus">learn more</a></button>
           </div>
         </div>
 

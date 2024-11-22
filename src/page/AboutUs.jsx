@@ -7,8 +7,10 @@ const AboutUs = () => {
     <>
       <NextHeader />
 
-      <div className="bg-[#f0f3f4] h-40">
-        <h2 className="ml-16 mb-5 text-xl">About Us</h2>
+
+
+      <div className="bg-[#f0f3f4] h-40 ">
+        <p className="pt-16 pl-36  text-5xl text-gray-600">About us</p>
       </div>
 
       <div className="border-y-2 border-gray-200  ">
@@ -22,6 +24,9 @@ const AboutUs = () => {
         </div>
 
       </div>
+
+
+
 
       <Footer />
 
