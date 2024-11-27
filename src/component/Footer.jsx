@@ -19,7 +19,7 @@ const Footer = () => {
                   <Link to="/availableareas" className="hover:underline">Available Areas</Link>
                 </li>
                 <li className="mb-3">
-                  <Link to="#" className="hover:underline">Delivery Charges</Link>
+                  <Link to="/deliverycharge" className="hover:underline">Delivery Charges</Link>
                 </li>
                 <li className="mb-3">
                   <Link to="#" className="hover:underline">Blog</Link>
@@ -36,7 +36,7 @@ const Footer = () => {
                   <Link to="#" className="hover:underline">FAQs</Link>
                 </li>
                 <li className="mb-3">
-                  <Link to="#" className="hover:underline">Contact Us</Link>
+                  <Link to="/contactus" className="hover:underline">Contact Us</Link>
                 </li>
               </ul>
             </div>

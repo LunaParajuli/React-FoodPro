@@ -44,7 +44,8 @@ const Headers = () => {
       <div className="flex justify-around bg-[#f0f3f4]  h-14 items-center shadow shadow-gray-400  fixed top-0 left-0 right-0 overflow-x-hidden z-20  ">
         <div className="flex h-10 items-center ">
           <img src="https://marketplace.canva.com/EAFaFUz4aKo/2/0/1600w/canva-yellow-abstract-cooking-fire-free-logo-JmYWTjUsE-Q.jpg" className="h-full rounded" alt="img" />
-          <h2 className="text-2xl ml-3 font-bold">Tastemandu</h2>
+
+          <h2 className="text-2xl ml-3 font-bold"><a href="/">Tastemandu</a></h2>
         </div>
 
         <button id="ilogin"
