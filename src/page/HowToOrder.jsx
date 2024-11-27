@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from "react-helmet";
 import Footer from '../component/Footer'
 import NextHeader from '../component/NextHeader'
 
@@ -6,9 +7,12 @@ const HowToOrder = () => {
   return (
 
     <>
+      <Helmet>
+        <title>Tastemandu|HowToOrder</title>
+        <meta name="description" content="Helmet application" />
+      </Helmet>
 
       <NextHeader />
-
 
       <div className="bg-[#f0f3f4] h-40 ">
         <p className="pt-16  pl-36  text-5xl text-gray-600">How to Order</p>
@@ -28,7 +32,6 @@ const HowToOrder = () => {
         </div>
 
       </div>
-
 
       <Footer />
 

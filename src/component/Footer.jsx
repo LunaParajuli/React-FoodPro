@@ -13,10 +13,10 @@ const Footer = () => {
               <h2 className="mb-3 text-sm font-semibold text-gray-900 uppercase dark:text-white">WE'RE TASTEMANDU</h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-3">
-                  <Link to="#" className=" hover:underline">About Us</Link>
+                  <Link to="/aboutus" className=" hover:underline">About Us</Link>
                 </li>
                 <li className="mb-3">
-                  <Link to="#" className="hover:underline">Available Areas</Link>
+                  <Link to="/availableareas" className="hover:underline">Available Areas</Link>
                 </li>
                 <li className="mb-3">
                   <Link to="#" className="hover:underline">Delivery Charges</Link>

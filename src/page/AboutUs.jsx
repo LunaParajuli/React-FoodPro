@@ -1,13 +1,17 @@
 import React from 'react'
+import { Helmet } from "react-helmet";
 import Footer from '../component/Footer'
 import NextHeader from '../component/NextHeader'
 
 const AboutUs = () => {
   return (
     <>
+      <Helmet>
+        <title>Tastemandu|AboutUs</title>
+        <meta name="description" content="Helmet application" />
+      </Helmet>
+
       <NextHeader />
-
-
 
       <div className="bg-[#f0f3f4] h-40 ">
         <p className="pt-16 pl-36 text-5xl text-gray-600">About us</p>
@@ -24,8 +28,6 @@ const AboutUs = () => {
         </div>
 
       </div>
-
-
 
 
       <Footer />
