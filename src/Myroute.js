@@ -9,6 +9,7 @@ import HowToOrder from './page/HowToOrder'
 import AvailableAreas from './page/AvailableAreas'
 import DeliveryCharge from './page/DeliveryCharge'
 import ContactUs from './page/ContactUs'
+import SendRequest from './component/userSide/SendRequest'
 
 const Myroute = () => {
   return (
@@ -27,6 +28,7 @@ const Myroute = () => {
           <Route path='availableareas' element={<AvailableAreas />} />
           <Route path='deliverycharge' element={<DeliveryCharge />} />
           <Route path='contactus' element={<ContactUs />} />
+          <Route path='sendrequest' element={<SendRequest />} />
         </Routes>
       </Router>
     </>
