@@ -30,7 +30,7 @@ const Footer = () => {
               <h2 className="mb-3 text-sm font-semibold text-gray-900 uppercase dark:text-white">GET HELP</h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-3">
-                  <Link to="#" className="hover:underline">How to Order?</Link>
+                  <Link to="/howtoorder" className="hover:underline">How to Order?</Link>
                 </li>
                 <li className="mb-3">
                   <Link to="#" className="hover:underline">FAQs</Link>
